@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/presentation/themes/app_colors.dart';
-import '../domain/models/company.dart';
+import '../../../core/presentation/themes/app_colors.dart';
+import '../../domain/models/company.dart';
 
 class CompanyListTile extends StatelessWidget {
   final Size size;
@@ -15,7 +15,7 @@ class CompanyListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.08,
+      height: size.height * 0.09,
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: AppColors.white,
@@ -27,14 +27,12 @@ class CompanyListTile extends StatelessWidget {
         ),
         subtitle: Text(
           company.getTime,
-          style: TextStyle(
-            color: Colors.black45,
-          ),
+          style: Theme.of(context).textTheme.subtitle1,
         ),
         trailing: Text(
           company.transactionString,
-          style: TextStyle(
-            color: Colors.black45,
+          style: const TextStyle(
+            color: AppColors.black,
           ),
         ),
       ),

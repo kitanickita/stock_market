@@ -23,12 +23,13 @@ AppBarTheme? _getAppBarTheme() {
     centerTitle: true,
     titleTextStyle: _getAppBarTitleTextStyle(),
     iconTheme: _getAppBarIconThemeData(),
+    actionsIconTheme: _getAppBarIconThemeData(),
   );
 }
 
 IconThemeData _getAppBarIconThemeData() {
   return const IconThemeData(
-    size: 18,
+    size: 24,
     color: AppColors.white,
   );
 }
@@ -44,7 +45,7 @@ TextStyle? _getAppBarTitleTextStyle() {
 
 DividerThemeData _getDividerThemeData() {
   return const DividerThemeData(
-    color: AppColors.stroke,
+    color: AppColors.grey,
     thickness: 1.5,
   );
 }
@@ -67,16 +68,16 @@ IconThemeData _getIconThemeData() {
 InputDecorationTheme _getInputDecorationTheme() {
   return InputDecorationTheme(
     enabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.grey),
+      borderSide: const BorderSide(color: AppColors.grey),
       borderRadius: BorderRadius.circular(8.0),
     ),
     focusColor: Colors.red,
     focusedBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.grey),
+      borderSide: const BorderSide(color: AppColors.grey),
       borderRadius: BorderRadius.circular(8.0),
     ),
     border: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.grey),
+      borderSide: const BorderSide(color: AppColors.grey),
       borderRadius: BorderRadius.circular(8.0),
     ),
     contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
@@ -140,9 +141,9 @@ TextTheme _getTextTheme() {
       fontWeight: FontWeight.normal,
     ),
     headline5: TextStyle(
-      color: AppColors.primary,
+      color: AppColors.grey,
       fontSize: ThemeConstants.fontSize16,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.normal,
     ),
     headline6: TextStyle(
       color: AppColors.grey,
@@ -151,7 +152,7 @@ TextTheme _getTextTheme() {
     ),
     subtitle1: TextStyle(
       color: AppColors.gray2,
-      fontSize: ThemeConstants.fontSize12,
+      fontSize: ThemeConstants.fontSize10,
       fontWeight: FontWeight.normal,
     ),
   );

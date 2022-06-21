@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stock_market_test/core/di/providers.dart';
-import 'package:stock_market_test/core/presentation/themes/app_colors.dart';
+import 'package:stock_market_test/core/presentation/routes/app_router.gr.dart';
 import 'package:stock_market_test/core/presentation/themes/app_themes.dart';
 
-class App extends ConsumerWidget {
+import '../../injection.dart';
+
+class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: appThemeData,
-      routeInformationParser: ref.read(autoRouterProvider).defaultRouteParser(),
-      routerDelegate: ref.read(autoRouterProvider).delegate(),
+      routerDelegate: getIt<AppRouter>().delegate(),
+      routeInformationParser: getIt<AppRouter>().defaultRouteParser(),
       debugShowCheckedModeBanner: false,
     );
   }

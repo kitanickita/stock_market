@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class DropDownCustomPicker extends StatefulWidget {
   final List<String> items;
@@ -16,6 +17,7 @@ class _DropDownCustomPickerState extends State<DropDownCustomPicker> {
   Widget build(BuildContext context) {
     String _category = widget.items[0];
     return DropdownButtonFormField<String>(
+      style: Theme.of(context).textTheme.headline5,
       items: widget.items
           .map(
             (currency) => DropdownMenuItem(
@@ -30,10 +32,14 @@ class _DropDownCustomPickerState extends State<DropDownCustomPicker> {
         });
       },
       value: _category,
-      icon: Icon(Icons.arrow_downward),
-      decoration: InputDecoration(
-        hintText: _category,
+      icon: Transform.rotate(
+        angle: -math.pi / 2,
+        child: const Icon(
+          Icons.arrow_back_ios_new_sharp,
+          size: 18,
+        ),
       ),
+      decoration: InputDecoration(),
     );
   }
 }
